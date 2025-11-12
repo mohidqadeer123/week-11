@@ -19,3 +19,12 @@ def kmeans(X, k)
     labels = model.labels
 
     return centroids, labels
+
+# Exercise 2
+
+def kmeans_diamonds(n, k)
+
+    '''Runs k-means clustering on first n numerical rows of diamonds dataset'''
+
+    X = diamonds_num.iloc[:n].to_numpy()
+    return kmeans(X, k)
