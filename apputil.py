@@ -28,3 +28,19 @@ def kmeans_diamonds(n, k)
 
     X = diamonds_num.iloc[:n].to_numpy()
     return kmeans(X, k)
+
+
+# Exercise 3
+def kmeans_timer(n, k, n_iter = 5)
+
+    '''Runs kmeans_diamonds(n, k) n_iter times and return average runtime in seconds.'''
+
+    times = []
+    for _ in range (n_iter):
+        start_time = time()
+        kmeans_diamonds(n, k)
+        end_time = time()
+        times.append(end_time - start_time)
+
+    average_time = sum(times) / n_iter
+    return average_time
