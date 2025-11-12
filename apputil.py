@@ -9,20 +9,20 @@ diamonds_num = df_diamonds.select_dtypes(include = [np.number])
 
 
 # Exercise 1
-def kmeans(X, k)
+def kmeans(X, k):
 
     '''executes k-means clustering on numerical numpy array X'''
 
-    model = kMeans(n_clusters = k)
+    model = KMeans(n_clusters = k)
     model.fit(X)
     centroids = model.cluster_centers_
-    labels = model.labels
+    labels = model.labels_
 
     return centroids, labels
 
 # Exercise 2
 
-def kmeans_diamonds(n, k)
+def kmeans_diamonds(n, k):
 
     '''Runs k-means clustering on first n numerical rows of diamonds dataset'''
 
@@ -31,7 +31,7 @@ def kmeans_diamonds(n, k)
 
 
 # Exercise 3
-def kmeans_timer(n, k, n_iter = 5)
+def kmeans_timer(n, k, n_iter = 5):
 
     '''Runs kmeans_diamonds(n, k) n_iter times and return average runtime in seconds.'''
 
